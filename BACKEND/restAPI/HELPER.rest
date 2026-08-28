@@ -1,0 +1,6 @@
+### ================= TEST AUTH PROTECTED ROUTE =================
+# Contoh route protected (ganti sesuai route Anda)
+GET http://localhost:5000/api/protected-route
+Authorization: Bearer 
+
+###

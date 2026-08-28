@@ -1,0 +1,31 @@
+{
+    "data": [
+    {
+      "id": 15,
+      "name": "PK 47 CIKEMBULAN",
+      "ownerName": "Rangga Setiawan",
+      "address": "Jl.Pangandaran 302",
+      "phone": "08977767655",
+      "email": "rangga@gmail.com",
+      "users": []
+    },
+    {
+        "id": 15,
+        "name": "lalamove",
+        "ownerName": "Agung gumelar",
+        "address": "Jl.Pondoh 302",
+        "phone": "08977767655",
+        "email": "agung@gmail.com",
+        "users": []
+      },
+      {
+        "id": 17,
+        "name": "Desitha Food",
+        "ownerName": "Ogenki desuka",
+        "address": "Jl.Hanyong 302",
+        "phone": "08977767655",
+        "email": "genki@gmail.com",
+        "users": []
+      }
+    ]
+}

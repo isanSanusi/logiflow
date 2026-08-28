@@ -1,0 +1,155 @@
+{
+    "data": [
+            {
+    "id": "90cc44d8-56ba-48e0-93b4-c8a15c87b17c",
+    "oleh": "Renaldi Hasan",
+    "waktu": "2025-09-09T10:46:01.723Z",
+    "pemesan": "Luo wen jin",
+    "marked": true,
+    "companyId": 15,
+    "userId": 41,
+    "items": [
+      {
+        "id": 160,
+        "kategori": "REJECT",
+        "ukuran": 100,
+        "diameter": 20,
+        "volume": 31,
+        "jumlah": 6,
+        "orderId": "90cc44d8-56ba-48e0-93b4-c8a15c87b17c"
+      },
+      {
+        "id": 161,
+        "kategori": "REJECT",
+        "ukuran": 130,
+        "diameter": 13,
+        "volume": 17,
+        "jumlah": 8,
+        "orderId": "90cc44d8-56ba-48e0-93b4-c8a15c87b17c"
+      }
+    ]
+  },
+  {
+    "id": "39abfdc9-df75-4e33-b709-22863ca03d83",
+    "oleh": "Mario Adam",
+    "waktu": "2025-09-09T10:39:37.959Z",
+    "pemesan": "Den Den Moshi",
+    "marked": true,
+    "companyId": 15,
+    "userId": 40,
+    "items": [
+      {
+        "id": 152,
+        "kategori": "SUPER",
+        "ukuran": 100,
+        "diameter": 31,
+        "volume": 75,
+        "jumlah": 1,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 153,
+        "kategori": "SUPER",
+        "ukuran": 100,
+        "diameter": 39,
+        "volume": 119,
+        "jumlah": 1,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 154,
+        "kategori": "SUPER",
+        "ukuran": 100,
+        "diameter": 40,
+        "volume": 125,
+        "jumlah": 2,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 155,
+        "kategori": "SUPER",
+        "ukuran": 100,
+        "diameter": 25,
+        "volume": 49,
+        "jumlah": 1,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 156,
+        "kategori": "SUPER",
+        "ukuran": 200,
+        "diameter": 38,
+        "volume": 226,
+        "jumlah": 1,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 157,
+        "kategori": "SUPER",
+        "ukuran": 200,
+        "diameter": 46,
+        "volume": 332,
+        "jumlah": 3,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 158,
+        "kategori": "SUPER",
+        "ukuran": 200,
+        "diameter": 61,
+        "volume": 584,
+        "jumlah": 0,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      },
+      {
+        "id": 159,
+        "kategori": "SUPER",
+        "ukuran": 200,
+        "diameter": 60,
+        "volume": 565,
+        "jumlah": 1,
+        "orderId": "39abfdc9-df75-4e33-b709-22863ca03d83"
+      }
+    ]
+  },
+  {
+    "id": "0de4a714-0392-46da-b98a-d7446413738b",
+    "oleh": "Mario Adam",
+    "waktu": "2025-09-09T10:06:00.519Z",
+    "pemesan": "Xiao Lim",
+    "marked": true,
+    "companyId": 15,
+    "userId": 40,
+    "items": [
+      {
+        "id": 149,
+        "kategori": "STANDARD",
+        "ukuran": 100,
+        "diameter": 11,
+        "volume": 9,
+        "jumlah": 2,
+        "orderId": "0de4a714-0392-46da-b98a-d7446413738b"
+      },
+      {
+        "id": 150,
+        "kategori": "STANDARD",
+        "ukuran": 100,
+        "diameter": 20,
+        "volume": 31,
+        "jumlah": 2,
+        "orderId": "0de4a714-0392-46da-b98a-d7446413738b"
+      },
+      {
+        "id": 151,
+        "kategori": "STANDARD",
+        "ukuran": 100,
+        "diameter": 54,
+        "volume": 229,
+        "jumlah": 3,
+        "orderId": "0de4a714-0392-46da-b98a-d7446413738b"
+      }
+    ]
+  }
+    ]
+  
+}

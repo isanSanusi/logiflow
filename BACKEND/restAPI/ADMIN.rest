@@ -1,0 +1,65 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NjUzNjc3MiwiZXhwIjoxNzU2NTM3NjcyfQ.92_b2B6OTjbiETRJ8UEAwtvLf5ojyf48OwAfT8Lrs7s
+
+@refresh = refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NjUzNjc3MiwiZXhwIjoxNzU3MTQxNTcyfQ.G62n--rVF-gCADTNwbq_u_lgFKRTkC16Xnn8C22R5Cw; Path=/; HttpOnly; SameSite=Strict
+
+@BASEURL = http://localhost:5000
+
+###
+POST {{BASEURL}}/auth/refresh
+Cookie: {{refresh}}
+
+###
+#=============== LOG IN ====================
+# ====                    LOGIN Admin
+POST {{BASEURL}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin_cantik",
+  "password": "root"
+}
+
+###
+GET {{BASEURL}}/auth/me
+Authorization: Bearer {{token}}
+
+###
+# ==== LIHAT SEMUA USER di company yang sama ==============
+GET {{BASEURL}}/usr
+Authorization: Bearer {{token}}
+
+
+###
+# ===== Daftar User akun
+POST {{BASEURL}}/usr
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "fullName": "Jean Doe",
+  "username": "Jean_123",
+  "password": "jean123"
+}
+
+###
+# ==== EDIT USER dalam 1 company
+PUT {{BASEURL}}/usr/28
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "fullName": "Jean Doe Updated",
+  "username": "Jean_123",
+  "password": "Jean123"
+}
+
+###
+# ==== DELETE USER dalam 1 company
+DELETE  {{BASEURL}}/usr/28
+Authorization: Bearer {{token}}
+
+###
+# ====== Logout
+POST {{BASEURL}}/auth/logout
+Content-Type: application/json
+Authorization: Bearer {{token}}

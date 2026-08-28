@@ -1,0 +1,66 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1NjUzMjMzNCwiZXhwIjoxNzU2NTMzMjM0fQ.ADUdIZGCA4CJFpqg7cxfV5eBTuENy-RE5q80zjNdb9Q
+
+@refresh = refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsInJvbGUiOiJTVVBFUl9BRE1JTiIsImlhdCI6MTc1NjUzMDQ5MCwiZXhwIjoxNzU3MTM1MjkwfQ.c8XnOGiQD1PlyDz3Zd1E6CbJ36KQE4h7aYl_jfSX8y0; Path=/; HttpOnly; SameSite=Strict
+
+
+@BASEURL = http://localhost:5000
+
+###
+POST {{BASEURL}}/auth/refresh
+Cookie: {{refresh}}
+
+###
+GET {{BASEURL}}/auth/me
+Authorization: Bearer {{token}}
+
+
+###
+# ==== LOgin Dunungan
+POST {{BASEURL}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "sandi@gmail.com",
+  "password": "qwerty1234"
+}
+
+###
+# ==== LIHAT SEMUA USER dalam 1 company
+GET {{BASEURL}}/co
+Authorization: Bearer {{token}}
+
+
+###
+# ===== Daftar kan user
+POST http://localhost:5000/co
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "fullName": "admin",
+  "username": "admin_cantik",
+  "password": "root"
+}
+
+###
+# ==== EDIT USER dalam 1 company
+PUT http://localhost:5000/co/26
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "fullName": "admin2 di Update",
+  "username": "admin updated",
+  "password": "rooted"
+}
+
+###
+# ==== DELETE USER dalam 1 company
+DELETE  http://localhost:5000/co/26
+Authorization: Bearer {{token}}
+
+###
+# ====== Logout
+POST http://localhost:5000/auth/logout
+Content-Type: application/json
+Authorization: Bearer {{token}}

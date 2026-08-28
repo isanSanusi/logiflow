@@ -1,0 +1,15 @@
+{
+    "data": 
+    {
+      "id": 39,
+      "fullName": "Tiara Andhini",
+      "username": "admin_cantik",
+      "role": "ADMIN",
+      "company": {
+        "id": 15,
+        "name": "PK 47 CIKEMBULAN",
+        "ownerName": "Rangga Setiawan",
+        "email": "rangga@gmail.com"
+      }
+    }
+  }

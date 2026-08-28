@@ -1,0 +1,123 @@
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzkzNzkzMCwiZXhwIjoxNzU3OTM4ODMwfQ.-SrL2XxMQnO-Z9-iocOLIKlo6Atp6MOGYvIcmkod6XY
+
+@refresh = refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzkzNzkzMCwiZXhwIjoxNzU4NTQyNzMwfQ.3Nyxg46QVLJLaH7tdQAd7mG_ogUXRsSQ9TA7XGk2bAU; Path=/; HttpOnly; SameSite=Strict
+
+@BASEURL = http://localhost:5000
+
+
+###
+# ==== LIHAT SEMUA USER di company yang sama ==============
+GET {{BASEURL}}/usr
+Authorization: Bearer {{token}}
+
+###
+POST {{BASEURL}}/auth/refresh
+Cookie: {{refresh}}
+
+###
+# ====                    LOGIN User
+POST {{BASEURL}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin_cantik",
+  "password": "admin123"
+}
+
+###
+POST {{BASEURL}}/auth/refresh
+Cookie: {{refresh}}
+
+###
+GET {{BASEURL}}/auth/me
+Authorization: Bearer {{token}}
+
+###
+
+POST {{BASEURL}}/order
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id" :"",
+  "oleh" : "pondoh",
+  "pemesan": "ali gobang",
+  "data" : [
+    { 
+      "kategori": "SUPER",
+      "ukuran": 100,
+      "diameter": 20,
+      "volume": 31,
+      "jumlah": 3 
+    },
+     { 
+      "kategori": "SUPER",
+      "ukuran": 200,
+      "diameter": 20,
+      "volume": 31,
+      "jumlah": 3 
+    },
+     { 
+      "kategori": "SUPER",
+      "ukuran": 300,
+      "diameter": 20,
+      "volume": 31,
+      "jumlah": 3 
+    }
+  ]
+}
+
+###
+GET {{BASEURL}}/order
+Authorization: Bearer {{token}}
+
+
+###
+@id = ae181f1f-6396-4fd3-a0df-cdfb95f9055c
+
+###
+POST {{BASEURL}}/order/mark/{{id}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{BASEURL}}/order/{{id}}
+Authorization: Bearer {{token}}
+
+###
+PUT {{BASEURL}}/order/{{id}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "oleh" : "pondoh 2",
+  "waktu": "2025-09-03T23:00:12.732Z",
+  "pemesan": "ali gobang",
+  "data" : [
+    { 
+      "kategori": "SUPER",
+      "ukuran": 100,
+      "diameter": 20,
+      "volume": 31,
+      "jumlah": 3 
+    },
+     { 
+      "kategori": "REJECT",
+      "ukuran": 200,
+      "diameter": 20,
+      "volume": 31,
+      "jumlah": 3 
+    }
+  ]
+}
+
+###
+DELETE {{BASEURL}}/order/{{id}}
+Authorization: Bearer {{token}}
+
+
+###
+# ====== Logout
+POST http://localhost:5000/auth/logout
+Authorization: Bearer 

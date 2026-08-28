@@ -1,0 +1,20 @@
+{
+  "data": [
+  {
+    "id": 40,
+    "fullName": "Mario Adam",
+    "username": "mario_ak27",
+    "password": "$2b$10$CDxyXThvr5AdbMtPni3E5.mKXYPxpJ1r7vIYe2exP8vF4Bdu49vLS",
+    "role": "USER",
+    "companyId": 15
+  },
+  {
+    "id": 41,
+    "fullName": "Renaldi Hasan",
+    "username": "renaldi_007",
+    "password": "$2b$10$jboXMJS9u4IY9shH/5U8Surjt2Onpa7AXyq2BGK5i.aHh2Lz/wOvi",
+    "role": "USER",
+    "companyId": 15
+  }
+  ]
+}

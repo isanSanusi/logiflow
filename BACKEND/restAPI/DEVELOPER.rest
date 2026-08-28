@@ -1,0 +1,75 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInJvbGUiOiJkZXZlbG9wZXIiLCJpYXQiOjE3NTY2Mjk5MzEsImV4cCI6MTc1NjYzMDgzMX0.fJyg-KKUHkkXNklTmGmMzok_gukMsSKV14cyz_yHhWE
+
+@refreshToken = refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInJvbGUiOiJkZXZlbG9wZXIiLCJpYXQiOjE3NTY1MjgwMzgsImV4cCI6MTc1NzEzMjgzOH0.kD3-2eYOaJCQjSH_FUzeZpHI0DdidqtftWL_Qa1puhE; Path=/; HttpOnly; SameSite=Strict
+
+@BASEURL = http://localhost:5000
+
+###
+# ====== RefreshToken
+POST {{BASEURL}}/auth/refresh
+Cookie: {{refreshToken}}
+
+###
+
+
+# ======== Login Developer
+POST {{BASEURL}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "dev",
+  "password": "password123"
+}
+
+###
+# ===== Cek Profil
+GET {{BASEURL}}/auth/me
+Authorization: Bearer {{token}}
+
+
+###
+# ===== Ambil semua daftar perusahaan
+GET {{BASEURL}}/dev
+Authorization: Bearer {{token}}
+
+###
+# ======== Daftar Perusahaan
+POST {{BASEURL}}/dev
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "companyName": "Sach Corporation",
+  "ownerName": "Sandi",
+  "address": "Cililin",
+  "phone": "089626581234",
+  "email": "sandi@gmail.com",
+  "password": "qwerty1234"
+}
+
+###
+# ==== Update data perusahaan berdasarkan id
+PUT {{BASEURL}}/dev/5
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "cv.Cahaya Abadi",
+  "ownerName": "Santoso",
+  "address": "Cimahi",
+  "phone": "022098342254",
+  "email": "cahayas@gmail.com",
+  "password": "thomascup"
+}
+
+###
+# ==== Hapus data perusahaan berdasarkan Id
+DELETE {{BASEURL}}/dev/6
+Authorization: Bearer {{token}}
+
+
+###
+# ====== Logout
+POST {{BASEURL}}/auth/logout
+Content-Type: application/json
+Authorization: Bearer {{token}}

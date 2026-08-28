@@ -1,0 +1,106 @@
+// Database connection
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Generate Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Company {
+  id        Int      @id @default(autoincrement())
+  name      String
+  ownerName String
+  address   String
+  phone     String
+  email     String   @unique
+  createdAt DateTime @default(now())
+
+  // Relasi
+  users          User[]
+  orders         ProductOrder[]
+  ProductHistory ProductHistory[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  fullName  String
+  username  String   @unique
+  password  String
+  role      String
+  createdAt DateTime @default(now())
+
+  company   Company? @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId Int?
+
+  refreshTokens  RefreshToken[]
+  orders         ProductOrder[]
+  ProductHistory ProductHistory[]
+}
+
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  revoked   Boolean  @default(false)
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ProductOrder {
+  id        String   @id @default(uuid())
+  oleh      String
+  waktu     DateTime
+  pemesan   String
+  marked    Boolean  @default(false)
+  companyId Int
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  userId Int?
+  user   User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  items ProductItem[]
+}
+
+model ProductItem {
+  id       Int    @id @default(autoincrement())
+  kategori String
+  ukuran   Int
+  diameter Int
+  volume   Int
+  jumlah   Int
+
+  orderId String
+  order   ProductOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model ProductHistory {
+  id        String   @id @default(uuid())
+  oleh      String
+  waktu     DateTime
+  pemesan   String
+  marked    Boolean  @default(false)
+  companyId Int
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  userId Int?
+  user   User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  items ItemHistory[]
+}
+
+model ItemHistory {
+  id       Int    @id @default(autoincrement())
+  kategori String
+  ukuran   Int
+  diameter Int
+  volume   Int
+  jumlah   Int
+
+  orderId String
+  order   ProductHistory @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}

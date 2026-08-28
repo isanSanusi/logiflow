@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "module": "esnext",
+    "target": "esnext",
+    "baseUrl": "src",
+    "paths": {
+      "@api/*": ["api/*"]
+    }
+  },
+  "include": ["src/**/*.js"],
+  "exclude": ["node_modules"]
+}

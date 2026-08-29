@@ -1,16 +1,21 @@
 FROM node:20-alpine
 
-# Create app directory
 WORKDIR /app
 
-# Install dependencies first (layer caching)
+# Install all deps (prisma CLI is usually a devDependency, needed for generate)
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
-# Copy source
+# Copy prisma schema before generate
+COPY prisma ./prisma
+RUN npx prisma generate
+
+# Copy rest of the source
 COPY . .
 
-# Run as non-root user (alpine images include 'node' user by default)
+# Optional: prune devDependencies after generate to slim the image
+RUN npm prune --omit=dev
+
 USER node
 
 EXPOSE 3000
